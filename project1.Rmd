@@ -137,7 +137,7 @@ ggplot(map_df, aes(x=state, y=count_per_state, label=count_per_state)) +
                      values = c("above"="#00ba38", "below"="#f8766d")) + 
   geom_text(color="white", size=2) +
   labs(title="Diverging Dot Plot", 
-       subtitle="Normalized mileage from 'mtcars': Dotplot") + 
+       subtitle="Total Company by State") + 
  # ylim(-2.5, 2.5) +
   coord_flip()
  
@@ -152,7 +152,7 @@ ggplot(map_df, aes(x=state, y=count_per_state, label=count_per_state)) +
                color = "blue") +
   geom_text(color="white", size=2) +
   labs(title="Diverging Lollipop Chart", 
-       subtitle="Normalized mileage from 'mtcars': Lollipop") + 
+       subtitle="Total Company by State") + 
  # ylim(-2.5, 2.5) +
     theme(text = element_text(size=8))+
   coord_flip()
@@ -168,7 +168,56 @@ ggplot(map_df, aes(x=state, y=count_per_state, label=count_per_state)) +
 Lets dig in on the state with the 3rd most companies in the data set. Imagine you work for the state and are interested in how many people are employed by companies in different industries. Create a plot that shows the average and/or median employment by industry for companies in this state (only use cases with full data, use R's `complete.cases()` function.) In addition to this, your graph should show how variable the ranges are, and you should deal with outliers.
 
 ```{r}
-# Answer Question 2 here
+## sort df with company count by state and identify state for research
+##NY
+map_df <- map_df %>% 
+    arrange(-count_per_state)
+map_df[3,]
+
+NY_df <- inc %>% 
+    filter(state=="NY")
+    
+sort(-NY_df$Employees)
+
+average_employed <- NY_df %>% 
+    group_by(Industry) %>% 
+    summarize(average_employed=mean(Employees)) %>% 
+    mutate(average_employed=round(average_employed,0))
+
+
+##option 1 without dots
+g <- ggplot(NY_df, aes(Industry, log(Employees,10)))
+g + geom_boxplot() + 
+  # geom_dotplot(binaxis='y', 
+  #              stackdir='center', 
+  #              dotsize = .5, 
+  #              fill="red") +
+  theme(axis.text.x = element_text(angle=90, vjust=0.6)) + 
+  labs(title="NYS Employment by Industry",
+       x="Industry",
+       y="Log Transformed Employment by company")+
+  coord_flip()
+
+
+g <- ggplot(NY_df, aes(Industry, log(Employees,10)))
+g + geom_boxplot() + 
+  geom_dotplot(binaxis='y',
+               stackdir='center',
+               dotsize = .5,
+               fill="red") +
+  theme(axis.text.x = element_text(angle=90, vjust=0.6)) + 
+  labs(title="NYS Employment by Industry",
+       x="Industry",
+       y="Log Transformed Employment by company")
+
+
+g <- ggplot(NY_df, aes(Industry, log(Employees,10)))
+g +  geom_violin()+
+  theme(axis.text.x = element_text(angle=90, vjust=0.6)) + 
+  labs(title="NYS Employment by Industry",
+       x="Industry",
+       y="Log Transformed Employment by company")
+
 ```
 
 ## Question 3
@@ -176,5 +225,5 @@ Lets dig in on the state with the 3rd most companies in the data set. Imagine yo
 Now imagine you work for an investor and want to see which industries generate the most revenue per employee. Create a chart that makes this information clear. Once again, the distribution per industry should be shown.
 
 ```{r}
-# Answer Question 3 here
+
 ```
