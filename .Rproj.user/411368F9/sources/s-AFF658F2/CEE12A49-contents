@@ -38,7 +38,7 @@ library(ggplot2)
 library(ggplot2)
 library(sp)
 library(tidyverse)
-
+library(ggmap)
 ##
 psych::describe(inc)
 
@@ -72,15 +72,10 @@ plot_usmap(data = map_df, values = 'count_per_state', lines = "red") +
   ) + theme(legend.position = "right")
 
 
-
-
-
-
-
 ## use google api to convert cities into lat/long
 ## Due to costs I load in csv from query call
-api <- readLines("E:\\Google_api.txt")
-register_google(key = api)
+# api <- readLines("E:\\Google_api.txt")
+# register_google(key = api)
 locations_df2 <-read_csv("geo_locations.csv")    
 locations_df2 <- locations_df2 %>% 
     select(geo_state=state,city=City,lon,lat)
@@ -122,7 +117,7 @@ ggplot(data=map_df, aes(x=reorder(state,count_per_state), y=count_per_state)) +
     coord_flip()
 
 
-library(ggplot2)
+
 theme_set(theme_bw())
 
 

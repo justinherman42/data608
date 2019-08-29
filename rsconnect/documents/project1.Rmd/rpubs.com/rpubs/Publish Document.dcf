@@ -1,0 +1,10 @@
+name: Publish Document
+title:
+username:
+account: rpubs
+server: rpubs.com
+hostUrl: rpubs.com
+appId: https://api.rpubs.com/api/v1/document/523408/7c71e11901614e78b469f7f496393d60
+bundleId: https://api.rpubs.com/api/v1/document/523408/7c71e11901614e78b469f7f496393d60
+url: http://rpubs.com/justin_herman_42/523408
+when: 1567101930.3548

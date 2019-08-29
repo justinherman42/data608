@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1567100347670.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "D55480A",
+    "lastKnownWriteTime" : 1566947223,
+    "last_content_update" : 1566947223,
+    "path" : "F:/data620/Xmedia/api_request_project.Rmd",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "24,0",
+        "scrollLine" : "4"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
