@@ -263,7 +263,7 @@ industry_revenue <- inc %>%
 
     
 
-g <- ggplot(industry_revenue, aes(Industry, rev_per_employee,10))
+g <- ggplot(industry_revenue, aes(Industry, rev_per_employee))
 g + geom_boxplot() + 
   # geom_dotplot(binaxis='y', 
   #              stackdir='center', 

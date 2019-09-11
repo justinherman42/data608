@@ -5,14 +5,14 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "0",
+    "hash" : "1695017470",
     "id" : "8D210EFA",
-    "lastKnownWriteTime" : 1567105778,
-    "last_content_update" : 1567105844618,
+    "lastKnownWriteTime" : 1567118441,
+    "last_content_update" : 1567118441645,
     "path" : "E:/data608/project1/project1.Rmd",
     "project_path" : null,
     "properties" : {
-        "cursorPosition" : "279,3",
+        "cursorPosition" : "270,30",
         "scrollLine" : "268"
     },
     "read_only" : false,
