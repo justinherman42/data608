@@ -1,9 +1,0 @@
-"0","inc <- read.csv(""https://raw.githubusercontent.com/charleyferrari/CUNY_DATA_608/master/module1/Data/inc5000_data.csv"", header= TRUE)
-"
-"2","Warning message:
-"
-"2","In dir.create(tempPath, recursive = TRUE) :"
-"2","
- "
-"2"," cannot create dir 'E:\', reason 'Permission denied'
-"
